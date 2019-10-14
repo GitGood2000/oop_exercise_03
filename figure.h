@@ -15,4 +15,4 @@ struct figure{
 //std::ostream& operator << (std::ostream& os, const figure& f);  
 };
 
-#endif //D_FIGURE_
+#endif //D_FIGURE_H

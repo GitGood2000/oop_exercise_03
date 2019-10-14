@@ -16,5 +16,4 @@ private:
     double length_;
 };
 
-
 #endif //D_SQUARE_H

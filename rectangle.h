@@ -15,5 +15,4 @@ private:
     point p1_, p2_;
 };
 
-
 #endif //D_RECTANGLE_H

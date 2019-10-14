@@ -4,7 +4,7 @@ add_executable(lab3
   ./lab3.cpp
   ./point.cpp
   ./square.cpp
-  ./rectange.cpp
+  ./rectangle.cpp
   ./trapeze.cpp)
 
 set(CMAKE_CXX_FLAGS

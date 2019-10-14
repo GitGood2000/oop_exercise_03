@@ -17,5 +17,4 @@ private:
     double l1_, l2_, h_;
 };
 
-
 #endif //D_TRAPEZE_H

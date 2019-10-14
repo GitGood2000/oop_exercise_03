@@ -20,5 +20,5 @@ double rectangle::area() {
 }
 
 void rectangle::print(std::ostream& os) {
-    os << "Rectangle [" << p1_ << "] (" << p2_ << ")";
+    os << "Rectangle [" << p1_ << "] [" << p2_ << "]";
 }
