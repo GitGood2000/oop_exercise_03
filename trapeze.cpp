@@ -1,22 +1,28 @@
 #include "trapeze.h"
 #include <cmath>
-//#include <algorythm>
+#include <cassert>
 
-trapeze::trapeze(const point& p, double l1, double l2, double h):
-    p_(p), l1_(l1), l2_(l2), h_(h) {}
+trapeze::trapeze(const point& p1, const point& p2, const point& p3, const point& p4):
+  p1_(p1), p2_(p2), p3_(p3), p4_(p4) {}
 
 trapeze::trapeze(std::istream& is){
-    is >> p_.x >> p_.y >> l1_ >> l2_ >> h_;
+    is >> p1_.x >> p1_.y >> p2_.x >> p2_.y >> p3_.x >> p3_.y >> p4_.x >> p4_.y;
+    assert();
+    assert();
+    assert();
 }
 
 point trapeze::center() {
-    return {(p_.x + (l1_ * 0.5)), (p_.y + (h_ * 0.5))};
+  return {((p1_.x + p4_.x)* 0.5), ((p1_.y + p2_.y) * 0.5)};
 }
 
 double trapeze::area() {
-  return std::abs((l1_+l2_)*h_*0.5);
+  const double l1 = p1_.x - p4_.x;
+  const double l2 = p2_.x - p3_.x;
+  const double h = p1_.y - p2_.y;
+  return std::abs(l1 * l2 * h * 0.5);
 }
 
 void trapeze::print(std::ostream& os) {
-  os << "Trapeze [" << p_ << "] (" << l1_ << " " << l2_ << " " << h_ << ")";
+  os << "Trapeze [" << p1_ << "] [" << p2_ << "] [" << p3_ << "] [" << p4_ << "]";
 }

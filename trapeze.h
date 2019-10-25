@@ -5,7 +5,7 @@
 #include <iostream>
 
 struct trapeze : figure{
-    trapeze(const point& p, double l1, double l2, double h);
+  trapeze(const point& p1, const point& p2, const point& p3, const point& p4);
     trapeze(std::istream& is);
     
     point center() override;
@@ -13,8 +13,7 @@ struct trapeze : figure{
     void print(std::ostream& os) override; 
     
 private:
-    point p_;
-    double l1_, l2_, h_;
+    point p1_, p2_, p3_, p4_;
 };
 
 #endif //D_TRAPEZE_H
