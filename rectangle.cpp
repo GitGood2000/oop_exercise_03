@@ -9,7 +9,8 @@ rectangle::rectangle(const point& p1, const point& p2, const point& p3, const po
 rectangle::rectangle(std::istream& is){
     is >> p1_.x >> p1_.y >> p2_.x >> p2_.y >> p3_.x >> p3_.y >> p4_.x >> p4_.y;
     assert(((p2_.x - p1_.x)*(p4_.x - p1_.x))+((p2_.y - p1_.y)*(p4_.y - p1_.y)) == 0);
-    
+    assert(((p3_.x - p2_.x)*(p1_.x - p2_.x))+((p3_.y - p2_.y)*(p1_.y - p2_.y)) == 0);
+    assert(((p4_.x - p3_.x)*(p2_.x - p3_.x))+((p4_.y - p3_.y)*(p2_.y - p3_.y)) == 0);
 }
 
 point rectangle::center() {
@@ -17,9 +18,8 @@ point rectangle::center() {
 }
 
 double rectangle::area() {
-  const double dx1 = p1_.x - p2_.x;
-    const double dy1 = p1_.y - p4_.y;
-    const double dx2 = p1_.
+    const double dx = p1_.x - p2_.x;
+    const double dy = p1_.y - p4_.y;
     return std::abs(dx * dy);
 }
 
