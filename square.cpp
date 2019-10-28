@@ -20,8 +20,9 @@ point square::center() {
 }
 
 double square::area() {
-  const double ds = p1_.x - p2_.x;
-  return std::abs(ds * ds);
+  const double ds1 = p1_.x - p2_.x;
+  const double ds2 = p4_.x - p1_.x;
+  return std::abs(ds1 * ds1 + ds2 * ds2);
 }
 
 void square::print(std::ostream& os){

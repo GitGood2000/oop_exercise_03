@@ -18,9 +18,11 @@ point rectangle::center() {
 }
 
 double rectangle::area() {
-    const double dx = p1_.x - p2_.x;
-    const double dy = p1_.y - p4_.y;
-    return std::abs(dx * dy);
+    const double dx1 = p1_.x - p2_.x;
+    const double dy1 = p1_.y - p4_.y;
+    const double dx2 = p1_.x - p4_.x;
+    const double dy2 = p1_.y - p2_.y;
+    return abs(dx1 * dy1) + abs(dx2 * dy2);
 }
 
 void rectangle::print(std::ostream& os) {

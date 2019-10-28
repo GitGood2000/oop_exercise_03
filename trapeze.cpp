@@ -16,12 +16,14 @@ point trapeze::center() {
 }
 
 double trapeze::area() {
-  const double l1 = p2_.x - p1_.x;
-  const double l2 = p4_.x - p3_.x;
+  const double l11 = p2_.x - p1_.x;
+  const double l12 = p2_.y - p1_.y;
+  const double l21 = p4_.x - p3_.x;
+  const double l22 = p4_.y - p3_.y;
   const double lh = ((p4_.x - p1_.x)*(p4_.x - p3_.x)+(p4_.y - p1_.y)*(p4_.y - p3_.y))/sqrt((p4_.x - p3_.x)*(p4_.x - p3_.x)+(p4_.y - p3_.y)*(p4_.y - p3_.y));
   const double h = sqrt((p4_.x - p1_.x)*(p4_.x - p1_.x)+(p4_.y - p1_.y)*(p4_.y - p1_.y)-lh*lh);
-  //std::cout << (p4_.x - p1_.x)*(p4_.x - p3_.x) << " "  << (p4_.y - p1_.y)*(p4_.y - p3_.y) << " " << lh << " " << h << std::endl;
-  return std::abs(l1 * l2 * h * 0.5);
+  //std::cout << l11 << " " << l12 << " " << l21 << " " << l22 << " " << (p4_.x - p1_.x)*(p4_.x - p3_.x) << " "  << (p4_.y - p1_.y)*(p4_.y - p3_.y) << " " << lh << " " << h << std::endl;
+  return ((abs(l11) + abs(l12) + abs(l21) + abs(l22)) * abs(h) * 0.5);
 }
 
 void trapeze::print(std::ostream& os) {
